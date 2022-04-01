@@ -71,6 +71,6 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'cancan'
 gem 'devise', '~> 4.8'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem "cancan"
