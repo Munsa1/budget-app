@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   get 'groups/index'
   get 'groups/new'
   get 'groups/show'
