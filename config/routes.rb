@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'turbo_devise/index'
   get 'users/index'
   get 'groups/index'
   get 'groups/new'
