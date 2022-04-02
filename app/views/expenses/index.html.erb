@@ -1,2 +1,32 @@
-<h1>Expenses#index</h1>
-<p>Find me in app/views/expenses/index.html.erb</p>
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-chevron-left"></i></a>
+    </li>
+    <li>
+      <h3>Transaction</h3>
+    </li>
+    <li>
+   <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
+   </nav>
+<div class="p-2 text-dark-50">
+  <h3><%= @group.name.capitalize %>'s transactions</h3>
+  <h4>Total spent: $<%= @group.total_expenses %></h4>
+</div>
+
+
+<% @expenses.each do |ex| %>
+  <div class="p-2">
+    <div class="card p-2 bg-light">
+      <div class="card-body">
+        <h5 class="card-title"><%= ex.name %></h5>
+        <p class="card-text">$<%= ex.amount %></p>
+        <p class="card-text"><small class="text-muted"><%= ex.created_at %></small></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="w-100  py-1 px-1 cat-btn">
+  <%= link_to "Add transaction", new_group_expense_path(@group, @expense), :class => "btn btn-outline-light" %>
+</div>

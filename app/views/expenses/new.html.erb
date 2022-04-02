@@ -1,2 +1,13 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/" title= "back-root"><i class="fa fa-chevron-left"></i></a>
+    </li>
+    <li>
+      <h3 class="heading fw-bold">Expenses</h3>
+    </li>
+    <li>
+   <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
+   </nav>
+<h3>Add your expenses</h3>
+<%= render "form" %>
